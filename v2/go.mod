@@ -1,6 +1,8 @@
 module github.com/datadog/stratus-red-team/v2
 
-go 1.18
+go 1.21.4
+
+toolchain go1.21.10
 
 require (
 	cloud.google.com/go/compute v1.10.0
@@ -15,7 +17,7 @@ require (
 	github.com/aws/aws-sdk-go-v2/service/cloudtrail v1.35.2
 	github.com/aws/aws-sdk-go-v2/service/ec2 v1.138.2
 	github.com/aws/aws-sdk-go-v2/service/ec2instanceconnect v1.20.6
-	github.com/aws/aws-sdk-go-v2/service/iam v1.28.2
+	github.com/aws/aws-sdk-go-v2/service/iam v1.32.0
 	github.com/aws/aws-sdk-go-v2/service/lambda v1.49.2
 	github.com/aws/aws-sdk-go-v2/service/organizations v1.23.2
 	github.com/aws/aws-sdk-go-v2/service/rds v1.64.2
@@ -24,9 +26,8 @@ require (
 	github.com/aws/aws-sdk-go-v2/service/s3 v1.47.2
 	github.com/aws/aws-sdk-go-v2/service/secretsmanager v1.25.2
 	github.com/aws/aws-sdk-go-v2/service/ses v1.22.4
-	github.com/aws/aws-sdk-go-v2/service/sesv2 v1.27.3
 	github.com/aws/aws-sdk-go-v2/service/ssm v1.44.2
-	github.com/aws/aws-sdk-go-v2/service/sts v1.26.2
+	github.com/aws/aws-sdk-go-v2/service/sts v1.28.6
 	github.com/aws/smithy-go v1.20.2
 	github.com/cenkalti/backoff/v4 v4.2.1
 	github.com/fatih/color v1.13.0
@@ -55,9 +56,9 @@ require (
 	github.com/aws/aws-sdk-go-v2/internal/endpoints/v2 v2.6.5 // indirect
 	github.com/aws/aws-sdk-go-v2/internal/ini v1.7.1 // indirect
 	github.com/aws/aws-sdk-go-v2/internal/v4a v1.2.8 // indirect
-	github.com/aws/aws-sdk-go-v2/service/internal/accept-encoding v1.10.3 // indirect
+	github.com/aws/aws-sdk-go-v2/service/internal/accept-encoding v1.11.2 // indirect
 	github.com/aws/aws-sdk-go-v2/service/internal/checksum v1.2.8 // indirect
-	github.com/aws/aws-sdk-go-v2/service/internal/presigned-url v1.10.8 // indirect
+	github.com/aws/aws-sdk-go-v2/service/internal/presigned-url v1.11.7 // indirect
 	github.com/aws/aws-sdk-go-v2/service/internal/s3shared v1.16.8 // indirect
 	github.com/aws/aws-sdk-go-v2/service/sso v1.18.2 // indirect
 	github.com/aws/aws-sdk-go-v2/service/ssooidc v1.21.2 // indirect
@@ -122,3 +123,19 @@ require (
 	google.golang.org/api v0.99.0
 	google.golang.org/grpc v1.50.0 // indirect
 )
+
+replace github.com/datadog/stratus-red-team/v2/internal/attacktechniques/aws/persistence/custom-create-new-user => ./internal/attacktechniques/aws/persistence/custom-create-new-user
+
+replace github.com/datadog/stratus-red-team/v2/internal/attacktechniques/aws/persistence/custom-privileged-user => ./internal/attacktechniques/aws/persistence/custom-privileged-user
+
+replace github.com/datadog/stratus-red-team/v2/internal/attacktechniques/aws/persistence/custom-privileged-group => ./internal/attacktechniques/aws/persistence/custom-privileged-group
+
+replace github.com/datadog/stratus-red-team/v2/internal/attacktechniques/aws/persistence/custom-reconnaissance => ./internal/attacktechniques/aws/persistence/custom-reconnaissance
+
+require github.com/datadog/stratus-red-team/v2/internal/attacktechniques/aws/persistence/custom-create-new-user v0.0.0
+
+require github.com/datadog/stratus-red-team/v2/internal/attacktechniques/aws/persistence/custom-privileged-user v0.0.0
+
+require github.com/datadog/stratus-red-team/v2/internal/attacktechniques/aws/persistence/custom-privileged-group v0.0.0
+
+require github.com/datadog/stratus-red-team/v2/internal/attacktechniques/aws/persistence/custom-reconnaissance v0.0.0
